@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>admin commonsource</title>
+  <%= stylesheet_link_tag    "commonsource/application", media: "all" %>
+  <%= javascript_include_tag "commonsource/application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="row">
+  <div class="small-2 columns">
+    <h4>commonsource</h4>
+    <ul class="menu vertical">
+      <li>
+        <%= link_to commonsource.root_path do %>
+          Dashboard
+        <% end %>
+      </li>
+      <% Commonsource.configuration.content_classes.each do |class_name| %>
+        <li>
+          <%= link_to class_name.tableize.titleize, entries_path(content_class: class_name.tableize) %>
+        </li>
+      <% end %>
+      <li>
+        <%= link_to main_app.blog_path do %>
+          commonground
+        <% end %>
+      </li>
+    </ul>
+  </div>
+  <div class="small-10 columns">
+    <div class="content-wrapper">
+      <%= yield %>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
