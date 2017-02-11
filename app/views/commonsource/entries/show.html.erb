@@ -25,5 +25,9 @@
   <%= @entry.author_name %>
 </p>
 
+<p>Image:
+<%= image_tag @entry.image.url(:medium) %>
+</p>
+
 <%= link_to 'Edit', edit_content_entry_path(@entry) %> |
 <%= link_to 'Back', content_entries_path %>

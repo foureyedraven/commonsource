@@ -7,6 +7,7 @@ class CreateCommonsourceEntries < ActiveRecord::Migration[5.0]
       t.json :payload
       t.integer :user_id, index: true
       t.string :author_name
+      
     
       t.datetime :published_at
       t.timestamps

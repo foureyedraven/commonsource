@@ -48,7 +48,7 @@ module Commonsource
     end
   
     def entry_params
-      allowed_attrs = %i(id type title slug published_at author_name)
+      allowed_attrs = %i(id type title slug published_at author_name image)
         .concat(content_class.constantize.content_attributes.keys)
   
       params.require(:entry).permit(*allowed_attrs)
